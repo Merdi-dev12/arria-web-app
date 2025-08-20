@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orria - Organisez votre réussite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: {
+                        50: '#EEF2FF',
+                        500: '#4F46E5',
+                        600: '#4338CA',
+                        700: '#3730A3'
+                    },
+                    secondary: {
+                        50: '#ECFDF5',
+                        500: '#10B981',
+                        600: '#059669'
+                    },
+                    accent: {
+                        500: '#F59E0B',
+                        600: '#D97706'
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'system-ui', 'sans-serif']
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'pulse-slow': 'pulse 3s ease-in-out infinite'
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 font-sans">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Orria</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors">Fonctionnalités</a>
+                    <a href="#dashboard" class="text-gray-600 hover:text-primary-600 transition-colors">Dashboard</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-primary-600 transition-colors">Tarifs</a>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <button class="text-gray-600 hover:text-primary-600 transition-colors">Connexion</button>
+                    <button class="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors">
+                        Commencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-sm font-medium">
+                            <i class="fas fa-sparkles mr-2"></i>
+                            Intelligence artificielle intégrée
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Organisez votre 
+                            <span class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+                                réussite
+                            </span>
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            L'application intelligente qui transforme vos études et votre travail en succès mesurable. 
+                            Planifiez, suivez et progressez avec l'IA.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-primary-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Commencer gratuitement
+                        </button>
+                        <button class="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-50 transition-colors">
+                            <i class="fas fa-play mr-2"></i>
+                            Voir la démo
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6 text-sm text-gray-500">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary-500 mr-2"></i>
+                            Gratuit pour commencer
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-secondary-500 mr-2"></i>
+                            Données sécurisées
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-secondary-500 mr-2"></i>
+                            Responsive
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl transform rotate-3 opacity-10"></div>
+                    <!-- Mock dashboard preview -->
+                    <div class="relative bg-white rounded-3xl shadow-2xl p-8 animate-float">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold text-gray-900">Tableau de bord</h3>
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-xl">
+                                    <div class="text-2xl font-bold text-primary-700">87%</div>
+                                    <div class="text-sm text-primary-600">Progression</div>
+                                </div>
+                                <div class="bg-gradient-to-r from-secondary-50 to-secondary-100 p-4 rounded-xl">
+                                    <div class="text-2xl font-bold text-secondary-700">12</div>
+                                    <div class="text-sm text-secondary-600">Tâches</div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600">Mathématiques</span>
+                                    <span class="text-sm font-semibold text-gray-900">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full w-[92%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                    Une solution complète pour votre réussite
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Que vous soyez étudiant ou professionnel, Orria s'adapte à vos besoins avec des outils intelligents
+                </p>
+            </div>
+            
+            <!-- User Type Toggle -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-gray-100 p-1 rounded-xl">
+                    <button id="student-tab" class="px-8 py-3 rounded-lg text-sm font-semibold transition-all bg-primary-500 text-white">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        Étudiants
+                    </button>
+                    <button id="professional-tab" class="px-8 py-3 rounded-lg text-sm font-semibold transition-all text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        Professionnels
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Student Features -->
+            <div id="student-features" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl hover:shadow-lg transition-all border border-blue-100">
+                    <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-calendar-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Planning de cours</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Organisez vos cours, révisions et échéances dans un calendrier intelligent qui s'adapte à votre rythme.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl hover:shadow-lg transition-all border border-green-100">
+                    <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Suivi de progression</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Visualisez vos progrès par matière avec des graphiques détaillés et des statistiques motivantes.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl hover:shadow-lg transition-all border border-purple-100">
+                    <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Synthèse IA</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        L'IA génère automatiquement des résumés et points clés de vos documents pour optimiser vos révisions.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl hover:shadow-lg transition-all border border-amber-100">
+                    <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-question-circle text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Quiz interactifs</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Des quiz personnalisés générés à partir de vos cours avec minuteur pour tester vos connaissances.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl hover:shadow-lg transition-all border border-red-100">
+                    <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-medal text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Système de badges</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Gagnez des badges et débloquez des récompenses en atteignant vos objectifs d'apprentissage.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl hover:shadow-lg transition-all border border-teal-100">
+                    <div class="w-12 h-12 bg-teal-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Collaboration</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Partagez vos synthèses et collaborez avec d'autres étudiants dans des espaces dédiés.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Professional Features (hidden by default) -->
+            <div id="professional-features" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <div class="group p-8 bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl hover:shadow-lg transition-all border border-slate-100">
+                    <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-tasks text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Gestion des tâches</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Organisez vos projets et tâches avec des priorités intelligentes et des rappels automatiques.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl hover:shadow-lg transition-all border border-emerald-100">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-bar text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Productivité</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Suivez votre temps de travail et analysez vos performances avec des métriques détaillées.
+                    </p>
+                </div>
+                
+                <div class="group p-8 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl hover:shadow-lg transition-all border border-indigo-100">
+                    <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-lightbulb text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Assistance IA</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recevez des suggestions de priorités et des conseils personnalisés pour optimiser votre workflow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Features Section -->
+
+    <!-- @COMPONENT: Dashboard Preview -->
+    <section id="dashboard" class="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                    Un tableau de bord qui s'adapte à vous
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Interface intuitive et personnalisable pour suivre vos progrès en temps réel
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Main Dashboard Container -->
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                    <!-- Dashboard Header -->
+                    <div class="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <!-- User Avatar -->
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold" data-bind="user.name">Marie Dubois</h3>
+                                    <p class="text-white/80 text-sm">Étudiante en Informatique</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold">87%</div>
+                                    <div class="text-sm text-white/80">Progression globale</div>
+                                </div>
+                                <div class="w-16 h-16 relative">
+                                    <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                                        <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="white" stroke-width="2" stroke-dasharray="87, 100"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dashboard Content -->
+                    <div class="p-8">
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <!-- Left Column - Stats Cards -->
+                            <div class="lg:col-span-2 space-y-6">
+                                <!-- Quick Stats -->
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="text-2xl font-bold text-blue-700">12</div>
+                                                <div class="text-sm text-blue-600">Cours cette semaine</div>
+                                            </div>
+                                            <i class="fas fa-book text-blue-500 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="text-2xl font-bold text-green-700">8</div>
+                                                <div class="text-sm text-green-600">Quiz complétés</div>
+                                            </div>
+                                            <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-100">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <div class="text-2xl font-bold text-amber-700">24h</div>
+                                                <div class="text-sm text-amber-600">Temps d'étude</div>
+                                            </div>
+                                            <i class="fas fa-clock text-amber-500 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Progress by Subject -->
+                                <div class="bg-gray-50 p-6 rounded-xl">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Progression par matière</h4>
+                                    <div class="space-y-4">
+                                        <!-- @MAP: subjects.map(subject => ( -->
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                                <span class="text-gray-700">Mathématiques</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                    <div class="bg-blue-500 h-2 rounded-full w-[92%]"></div>
+                                                </div>
+                                                <span class="text-sm font-semibold text-gray-900 w-10">92%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                                <span class="text-gray-700">Physique</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                    <div class="bg-green-500 h-2 rounded-full w-[78%]"></div>
+                                                </div>
+                                                <span class="text-sm font-semibold text-gray-900 w-10">78%</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                                                <span class="text-gray-700">Informatique</span>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                    <div class="bg-purple-500 h-2 rounded-full w-[95%]"></div>
+                                                </div>
+                                                <span class="text-sm font-semibold text-gray-900 w-10">95%</span>
+                                            </div>
+                                        </div>
+                                        <!-- @END_MAP )) -->
+                                    </div>
+                                </div>
+                                
+                                <!-- Recent Activity -->
+                                <div class="bg-white border border-gray-200 p-6 rounded-xl">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Activité récente</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
+                                            <i class="fas fa-check-circle text-green-500"></i>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Quiz Algèbre complété</div>
+                                                <div class="text-xs text-gray-500">Score: 18/20 • Il y a 2h</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+                                            <i class="fas fa-file-alt text-blue-500"></i>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Synthèse IA générée</div>
+                                                <div class="text-xs text-gray-500">Cours de Physique quantique • Il y a 4h</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3 p-3 bg-amber-50 rounded-lg">
+                                            <i class="fas fa-medal text-amber-500"></i>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Badge débloqué</div>
+                                                <div class="text-xs text-gray-500">Marathonien de l'étude • Hier</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column - Calendar & Badges -->
+                            <div class="space-y-6">
+                                <!-- Upcoming Tasks -->
+                                <div class="bg-white border border-gray-200 p-6 rounded-xl">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Prochaines échéances</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start space-x-3 p-3 bg-red-50 rounded-lg border border-red-100">
+                                            <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Examen Mathématiques</div>
+                                                <div class="text-xs text-red-600">Dans 2 jours</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-amber-50 rounded-lg border border-amber-100">
+                                            <div class="w-2 h-2 bg-amber-500 rounded-full mt-2"></div>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Projet Informatique</div>
+                                                <div class="text-xs text-amber-600">Dans 5 jours</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3 p-3 bg-green-50 rounded-lg border border-green-100">
+                                            <div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                                            <div class="flex-1">
+                                                <div class="text-sm font-medium text-gray-900">Quiz Physique</div>
+                                                <div class="text-xs text-green-600">Dans 1 semaine</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Achievement Badges -->
+                                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Badges récents</h4>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                            <i class="fas fa-fire text-2xl text-orange-500 mb-2"></i>
+                                            <div class="text-xs font-medium text-gray-900">Série de 7</div>
+                                        </div>
+                                        <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                            <i class="fas fa-star text-2xl text-yellow-500 mb-2"></i>
+                                            <div class="text-xs font-medium text-gray-900">Perfectionniste</div>
+                                        </div>
+                                        <div class="text-center p-3 bg-white rounded-lg shadow-sm">
+                                            <i class="fas fa-rocket text-2xl text-blue-500 mb-2"></i>
+                                            <div class="text-xs font-medium text-gray-900">Progression rapide</div>
+                                        </div>
+                                        <div class="text-center p-3 bg-white rounded-lg shadow-sm opacity-50">
+                                            <i class="fas fa-trophy text-2xl text-gray-400 mb-2"></i>
+                                            <div class="text-xs font-medium text-gray-400">Champion</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quick Actions -->
+                                <div class="space-y-2">
+                                    <button class="w-full bg-primary-500 text-white p-3 rounded-lg hover:bg-primary-600 transition-colors flex items-center justify-center">
+                                        <i class="fas fa-plus mr-2"></i>
+                                        Nouveau quiz
+                                    </button>
+                                    <button class="w-full bg-secondary-500 text-white p-3 rounded-lg hover:bg-secondary-600 transition-colors flex items-center justify-center">
+                                        <i class="fas fa-upload mr-2"></i>
+                                        Ajouter document
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Dashboard Preview -->
+
+    <!-- @COMPONENT: AI Features Showcase -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 text-sm font-medium">
+                            <i class="fas fa-brain mr-2"></i>
+                            Intelligence Artificielle
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+                            L'IA qui comprend votre façon d'apprendre
+                        </h2>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Notre intelligence artificielle analyse vos documents, génère des synthèses personnalisées et crée des quiz adaptés à votre niveau.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center mt-1">
+                                <i class="fas fa-file-alt text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Synthèse automatique</h3>
+                                <p class="text-gray-600">Transforme vos cours en résumés structurés avec les points clés</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mt-1">
+                                <i class="fas fa-question text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Quiz intelligents</h3>
+                                <p class="text-gray-600">Génère des questions personnalisées basées sur vos documents</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mt-1">
+                                <i class="fas fa-chart-line text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Analyse de progression</h3>
+                                <p class="text-gray-600">Identifie vos forces et points d'amélioration automatiquement</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transition-all">
+                        <i class="fas fa-magic mr-2"></i>
+                        Découvrir l'IA d'Orria
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <!-- AI Demo Interface -->
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-1 rounded-2xl">
+                        <div class="bg-white rounded-2xl p-8">
+                            <div class="space-y-6">
+                                <div class="text-center">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Synthèse IA en cours...</h3>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-[75%] animate-pulse"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-6 rounded-xl">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Document analysé: Cours de Thermodynamique</h4>
+                                    <div class="space-y-3 text-sm text-gray-600">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            Concepts clés identifiés (12)
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-2"></i>
+                                            Formules extraites (8)
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-spinner fa-spin text-blue-500 mr-2"></i>
+                                            Génération des quiz (5/10)
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                                    <div class="text-sm text-blue-700 font-medium mb-2">Exemple de question générée:</div>
+                                    <div class="text-gray-900">"Quelle est la relation entre l'entropie et la température dans un système isolé?"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce">
+                        <i class="fas fa-lightbulb text-white text-xl"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center animate-pulse">
+                        <i class="fas fa-check text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AI Features Showcase -->
+
+    <!-- @COMPONENT: CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h2 class="text-3xl lg:text-5xl font-bold text-white">
+                        Prêt à transformer votre façon d'apprendre ?
+                    </h2>
+                    <p class="text-xl text-white/90 leading-relaxed">
+                        Rejoignez des milliers d'étudiants et professionnels qui utilisent déjà Orria pour atteindre leurs objectifs
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-primary-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-50 transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Commencer gratuitement
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-primary-600 transition-all">
+                        <i class="fas fa-calendar mr-2"></i>
+                        Planifier une démo
+                    </button>
+                </div>
+                
+                <div class="flex justify-center items-center space-x-8 text-white/80 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-credit-card mr-2"></i>
+                        Aucune carte requise
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-times mr-2"></i>
+                        Annulation à tout moment
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        10k+ utilisateurs satisfaits
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTA Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">Orria</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        L'application intelligente qui transforme votre façon d'apprendre et de travailler.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">Produit</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Fonctionnalités</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Tarifs</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">API</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Intégrations</a>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">Ressources</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Documentation</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Tutoriels</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Support</a>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">Entreprise</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">À propos</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Carrières</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Presse</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Orria. Tous droits réservés.
+                </p>
+                <div class="flex space-x-6 text-sm text-gray-400 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="hover:text-white transition-colors">Conditions d'utilisation</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Tab switching functionality
+            const studentTab = document.getElementById('student-tab');
+            const professionalTab = document.getElementById('professional-tab');
+            const studentFeatures = document.getElementById('student-features');
+            const professionalFeatures = document.getElementById('professional-features');
+
+            studentTab.addEventListener('click', function() {
+                // Update tabs
+                studentTab.classList.add('bg-primary-500', 'text-white');
+                studentTab.classList.remove('text-gray-600', 'hover:text-gray-900');
+                professionalTab.classList.remove('bg-primary-500', 'text-white');
+                professionalTab.classList.add('text-gray-600', 'hover:text-gray-900');
+                
+                // Update content
+                studentFeatures.classList.remove('hidden');
+                professionalFeatures.classList.add('hidden');
+            });
+
+            professionalTab.addEventListener('click', function() {
+                // Update tabs
+                professionalTab.classList.add('bg-primary-500', 'text-white');
+                professionalTab.classList.remove('text-gray-600', 'hover:text-gray-900');
+                studentTab.classList.remove('bg-primary-500', 'text-white');
+                studentTab.classList.add('text-gray-600', 'hover:text-gray-900');
+                
+                // Update content
+                professionalFeatures.classList.remove('hidden');
+                studentFeatures.classList.add('hidden');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-white/95');
+                    nav.classList.remove('bg-white/80');
+                } else {
+                    nav.classList.add('bg-white/80');
+                    nav.classList.remove('bg-white/95');
+                }
+            });
+
+            // TODO: Implement user registration and authentication system
+            // TODO: Add API integration for AI-powered content synthesis
+            // TODO: Implement file upload functionality for document processing
+            // TODO: Create quiz generation and timer functionality
+            // TODO: Build progress tracking and statistics system
+            // TODO: Add badge and achievement system
+            // TODO: Implement collaborative features for students
+            // TODO: Add notification system for reminders and alerts
+        })();
+    </script>
+</body>
+</html>
